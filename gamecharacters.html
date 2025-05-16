@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Silog Universe - Game Characters</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html" class="active">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html">
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1 class="section-title">Game Characters</h1>
+            <div class="mechanics-section">
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-character" placeholder="Search characters...">
+                    <button id="add-character-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Character
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Icon</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Age</th>
+                                <th>Background</th>
+                                <th>Personality</th>
+                                <th>Favorite Order</th>
+                                <th>Quirk</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>👴</td>
+                                <td>Matandang Senior</td>
+                                <td>Regular Customer</td>
+                                <td>65+</td>
+                                <td>Former Jeepney driver / Teacher</td>
+                                <td>Friendly but forgetful</td>
+                                <td>Tosilog with extra garlic rice</td>
+                                <td>Loves to chat while eating</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>🧑‍💼</td>
+                                <td>Working Masungit</td>
+                                <td>Office Worker</td>
+                                <td>30-40</td>
+                                <td>Stressed-out office worker</td>
+                                <td>Always in a hurry</td>
+                                <td>Bangsilog or Cornsilog</td>
+                                <td>Leaves big tips when satisfied</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>👨‍👩‍👧‍👦</td>
+                                <td>Family</td>
+                                <td>Group</td>
+                                <td>Various</td>
+                                <td>Family unit</td>
+                                <td>Varied</td>
+                                <td>Multiple meals</td>
+                                <td>Requests weird food combos</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>👷</td>
+                                <td>Construction Worker</td>
+                                <td>Laborer</td>
+                                <td>25-45</td>
+                                <td>Padyak Driver, Karinderya Boys</td>
+                                <td>Hardworking</td>
+                                <td>Any silog meal</td>
+                                <td>Loves EXTRA RICE</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>💅</td>
+                                <td>Sosyalera Tita</td>
+                                <td>Regular Customer</td>
+                                <td>40-50</td>
+                                <td>Health-conscious customer</td>
+                                <td>Fussy but friendly</td>
+                                <td>Healthiest meal option</td>
+                                <td>Complains about oil but eats extra rice</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>👻</td>
+                                <td>Mysterious Late-Night Customer</td>
+                                <td>Special</td>
+                                <td>Unknown</td>
+                                <td>Mysterious</td>
+                                <td>Quiet and mysterious</td>
+                                <td>Tapsilog</td>
+                                <td>Only appears at midnight</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+            </div>
+
+            <!-- Add Character Modal -->
+            <div id="character-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Add New Character</h2>
+                    <form id="character-form">
+                        <div class="form-group">
+                            <label for="character-icon">Icon:</label>
+                            <input type="text" id="character-icon" name="icon" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-name">Name:</label>
+                            <input type="text" id="character-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-type">Type:</label>
+                            <input type="text" id="character-type" name="type" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-age">Age:</label>
+                            <input type="text" id="character-age" name="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-background">Background:</label>
+                            <textarea id="character-background" name="background" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-personality">Personality:</label>
+                            <textarea id="character-personality" name="personality" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-order">Favorite Order:</label>
+                            <input type="text" id="character-order" name="order" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="character-quirk">Quirk:</label>
+                            <textarea id="character-quirk" name="quirk" required></textarea>
+                        </div>
+                        <button type="submit" class="edit-btn">Save Character</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>          
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/29.png">
+                    <h2>Silog Universe</h2>
+                    <p>Fullstack Web Developer</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">edit</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="orders.js"></script>
+    <script src="index.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/gamecharacters.js"></script>
+</body>
+</html> 

@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap');
 
 :root{
-    --color-primary: #6C9BCF;
-    --color-danger: #FF0060;
-    --color-success: #1B9C85;
-    --color-warning: #F7D060;
+    --color-primary: #ac723d; /* Warm brown */
+    --color-danger: #A67B5B; /* Terracotta */
+    --color-success: #7D9F85; /* Sage green */
+    --color-warning: #D4B483; /* Warm sand */
     --color-white: #fff;
-    --color-info-dark: #7d8da1;
-    --color-dark: #363949;
-    --color-light: rgba(132, 139, 200, 0.18);
-    --color-dark-variant: #677483;
-    --color-background: #ffdabc;
+    --color-info-dark: #6B5B4E; /* Dark brown */
+    --color-dark: #4A3C31; /* Deep brown */
+    --color-light: rgba(139, 115, 85, 0.18); /* Light brown with opacity */
+    --color-dark-variant: #5D4B3C; /* Medium brown */
+    --color-background: #fff1d1; /* Warm off-white */
+    --color-gray-dark: #6B5B4E; /* Dark brown for text */
+    --color-gray-light: #D4C9B8; /* Light brown for backgrounds */
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
@@ -29,6 +31,116 @@
     --color-dark-variant: #a3bdcc;
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* Dark mode specific styles */
+body.dark-mode-variables {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+body.dark-mode-variables .sidebar,
+body.dark-mode-variables .user-profile,
+body.dark-mode-variables .online-players,
+body.dark-mode-variables .reminders,
+body.dark-mode-variables .mechanics-section,
+body.dark-mode-variables .mechanics-card,
+body.dark-mode-variables .menu-item,
+body.dark-mode-variables .step,
+body.dark-mode-variables .mode-card,
+body.dark-mode-variables .unlockable-card,
+body.dark-mode-variables .download-card,
+body.dark-mode-variables .analytics-card,
+body.dark-mode-variables .version-item,
+body.dark-mode-variables .modal-content {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+body.dark-mode-variables .nav {
+    background-color: var(--color-white);
+}
+
+body.dark-mode-variables .dark-mode {
+    background-color: var(--color-light);
+}
+
+body.dark-mode-variables .dark-mode span.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+body.dark-mode-variables .text-muted {
+    color: var(--color-gray-dark);
+}
+
+body.dark-mode-variables .system-requirements {
+    background-color: var(--color-light);
+}
+
+body.dark-mode-variables .tip-card {
+    background-color: var(--color-light);
+}
+
+body.dark-mode-variables .chart-placeholder .bar {
+    background-color: var(--color-primary);
+}
+
+body.dark-mode-variables .status-badge {
+    color: var(--color-white);
+}
+
+body.dark-mode-variables .download-btn.secondary {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+body.dark-mode-variables .close-modal {
+    color: var(--color-dark-variant);
+}
+
+body.dark-mode-variables .modal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode-variables th,
+body.dark-mode-variables .user-management th,
+body.dark-mode-variables .recent-orders th,
+body.dark-mode-variables .text-muted,
+body.dark-mode-variables .muted,
+body.dark-mode-variables small,
+body.dark-mode-variables .secondary,
+body.dark-mode-variables .reminders .notification .content,
+body.dark-mode-variables .reminders .header,
+body.dark-mode-variables .reminders .add-reminder,
+body.dark-mode-variables .show-all-link {
+    color: #4b4b4b !important;
+}
+
+body.dark-mode-variables td,
+body.dark-mode-variables .user-management td,
+body.dark-mode-variables .recent-orders td,
+body.dark-mode-variables .reminders,
+body.dark-mode-variables .reminders .notification,
+body.dark-mode-variables .reminders .add-reminder,
+body.dark-mode-variables .reminders .notification .icon,
+body.dark-mode-variables .reminders .notification .content span,
+body.dark-mode-variables .reminders .notification .content p {
+    color: #fff !important;
+}
+
+body.dark-mode-variables a,
+body.dark-mode-variables .primary,
+body.dark-mode-variables .danger,
+body.dark-mode-variables .success,
+body.dark-mode-variables .warning {
+    color: #fff !important;
+}
+
+body.dark-mode-variables .edit-btn,
+body.dark-mode-variables .delete-btn,
+body.dark-mode-variables .download-btn {
+    color: #fff !important;
 }
 
 *{
@@ -120,7 +232,7 @@ b{
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 12rem auto 23rem;
+    grid-template-columns: 12rem minmax(0, 1fr) 23rem;
 }
 
 aside{
@@ -380,6 +492,320 @@ main .recent-orders a{
     color: var(--color-primary);
 }
 
+/* Dashboard Page Styles */
+
+/* Dashboard Overview Cards */
+main .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+main .dashboard-cards .card {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+main .dashboard-cards .card:hover {
+    box-shadow: none;
+}
+
+main .dashboard-cards .card .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .dashboard-cards .card .header .icon {
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+main .dashboard-cards .card:nth-child(1) .header .icon {
+    background-color: var(--color-primary);
+}
+
+main .dashboard-cards .card:nth-child(2) .header .icon {
+    background-color: var(--color-success);
+}
+
+main .dashboard-cards .card:nth-child(3) .header .icon {
+    background-color: var(--color-warning);
+}
+
+main .dashboard-cards .card:nth-child(4) .header .icon {
+    background-color: var(--color-danger);
+}
+
+main .dashboard-cards .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+main .dashboard-cards .card .change {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+main .dashboard-cards .card .positive {
+    color: var(--color-success);
+}
+
+main .dashboard-cards .card .negative {
+    color: var(--color-danger);
+}
+
+/* Popular Dishes / Levels */
+main .popular-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+main .popular-items > div {
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+main .popular-items > div:hover {
+    box-shadow: none;
+}
+
+main .popular-items .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .popular-items .item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--color-light);
+}
+
+main .popular-items .item:last-child {
+    border-bottom: none;
+}
+
+main .popular-items .item .img-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.8rem;
+    background-color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .popular-items .item .img-box span {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+main .popular-items .item .item-info {
+    flex: 1;
+}
+
+main .popular-items .item .item-info .name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+main .popular-items .item .item-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+main .popular-items .item .item-stats .count {
+    background-color: var(--color-light);
+    padding: 0.2rem 0.7rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.8rem;
+}
+
+/* Error Logs */
+main .error-logs {
+    margin-top: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+main .error-logs:hover {
+    box-shadow: none;
+}
+
+main .error-logs .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .error-logs .log {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: var(--border-radius-1);
+    border-left: 4px solid var(--color-danger);
+    background-color: rgba(255, 0, 96, 0.05);
+}
+
+main .error-logs .log .timestamp {
+    font-size: 0.8rem;
+    color: var(--color-info-dark);
+    margin-bottom: 0.3rem;
+}
+
+main .error-logs .log .error-type {
+    font-weight: 600;
+    color: var(--color-danger);
+    margin-bottom: 0.3rem;
+}
+
+main .error-logs .log .message {
+    font-size: 0.9rem;
+}
+
+/* Recent Activity */
+main .recent-activity {
+    margin-top: 2.5rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+main .recent-activity:hover {
+    box-shadow: none;
+}
+
+main .recent-activity .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .recent-activity .activity {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-light);
+}
+
+main .recent-activity .activity:last-child {
+    border-bottom: none;
+}
+
+main .recent-activity .activity .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main .recent-activity .activity .details {
+    flex: 1;
+}
+
+main .recent-activity .activity .details .user {
+    font-weight: 600;
+}
+
+main .recent-activity .activity .details .action {
+    margin: 0.2rem 0;
+}
+
+main .recent-activity .activity .details .time {
+    font-size: 0.8rem;
+    color: var(--color-info-dark);
+}
+
+/* Game Version Info */
+main .version-info {
+    margin-top: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+main .version-info:hover {
+    box-shadow: none;
+}
+
+main .version-info .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+main .version-info .current-version {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-bottom: 1rem;
+}
+
+main .version-info .patch-notes {
+    padding: 0.8rem;
+}
+
+main .version-info .patch-notes h4 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+main .version-info .patch-notes h4 span {
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+main .version-info .patch-notes ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+main .version-info .patch-notes ul li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+main .version-info .patch-notes ul li::before {
+    content: '•';
+    position: absolute;
+    left: -1rem;
+    color: var(--color-primary);
+}
+
 .right-section{
     margin-top: 1.4rem;
 }
@@ -461,6 +887,77 @@ main .recent-orders a{
     margin-bottom: 0.2rem;
 }
 
+/* Right Section Dashboard Widgets */
+.right-section .online-players {
+    margin-top: 2rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.right-section .online-players:hover {
+    box-shadow: none;
+}
+
+.right-section .online-players .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.right-section .online-players .player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.right-section .online-players .player:last-child {
+    border-bottom: none;
+}
+
+.right-section .online-players .player .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.right-section .online-players .player .avatar::after {
+    content: '';
+    position: absolute;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    border: 2px solid var(--color-white);
+}
+
+.right-section .online-players .player .info {
+    flex: 1;
+}
+
+.right-section .online-players .player .info .name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.right-section .online-players .player .info .level {
+    font-size: 0.8rem;
+    color: var(--color-info-dark);
+}
+
+.right-section .online-players .player .time {
+    font-size: 0.8rem;
+}
+
 .right-section .reminders{
     margin-top: 2rem;
 }
@@ -538,59 +1035,13 @@ main .recent-orders a{
 }
 
 @media screen and (max-width: 1200px) {
-    .container{
-        width: 95%;
-        grid-template-columns: 7rem auto 23rem;
-    }
-
-    aside .logo h2{
-        display: none;
-    }
-
-    aside .sidebar h3{
-        display: none;
-    }
-
-    aside .sidebar a{
-        width: 5.6rem;
-    }
-
-    aside .sidebar a:last-child{
-        position: relative;
-        margin-top: 1.8rem;
-    }
-
-    main .analyse{
+    .container {
         grid-template-columns: 1fr;
-        gap: 0;
     }
-
-    main .new-users .user-list .user{
-        flex-basis: 40%;
+    .right-section {
+        width: 100%;
+        margin: 0;
     }
-
-    main .recent-orders {
-        width: 94%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 2rem 0 0 0.8rem;
-    }
-
-    main .recent-orders table{
-        width: 83vw;
-    }
-
-    main table thead tr th:last-child,
-    main table thead tr th:first-child{
-        display: none;
-    }
-
-    main table tbody tr td:last-child,
-    main table tbody tr td:first-child{
-        display: none;
-    }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -650,6 +1101,11 @@ main .recent-orders a{
         padding: 0 1rem;
     }
 
+    /* Dashboard Responsive Mobile */
+    main .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
     main .new-users .user-list .user{
         flex-basis: 35%;
     }
@@ -706,5 +1162,1505 @@ main .recent-orders a{
     .right-section .nav button span{
         font-size: 2rem;
     }
+}
 
+/* NEW ADDED*/
+
+/* Dashboard specific styles */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-info h3 {
+    font-size: 1rem;
+    color: var(--color-dark-variant);
+}
+
+.stat-info h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+.recent-activities {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 2.5rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+#activities-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#activities-table th,
+#activities-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.activity-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.status-badge.active {
+    background: var(--color-success);
+    color: white;
+}
+
+.status-badge.pending {
+    background: var(--color-warning);
+    color: white;
+}
+
+.status-badge.inactive {
+    background: var(--color-danger);
+    color: white;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin: 0 0.25rem;
+}
+
+.action-btn.view {
+    color: var(--color-primary);
+}
+
+.action-btn.edit {
+    color: var(--color-warning);
+}
+
+.action-btn.delete {
+    color: var(--color-danger);
+}
+
+/* User Management Styles */
+.user-management-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#search-user {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+#add-user-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-user-btn:hover {
+    background-color: #45a049;
+}
+
+.user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-management th, .user-management td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.user-management th {
+    background-color: #f2f2f2;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    position: relative;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+.edit-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn:hover {
+    background-color: #D32F2F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn:active, .delete-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn::after, .delete-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+/* Game Downloads Page Styles */
+.download-cards {
+    margin-top: 2rem;
+}
+
+.download-card {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.download-card.featured {
+    border: 2px solid var(--color-primary);
+}
+
+.download-card:hover {
+    box-shadow: none;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.version-badge {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-1);
+    font-weight: 600;
+}
+
+.download-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-dark-variant);
+}
+
+.info-item i {
+    color: var(--color-primary);
+}
+
+.system-requirements {
+    background: var(--color-light);
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    margin-bottom: 1.5rem;
+}
+
+.system-requirements h3 {
+    margin-bottom: 0.8rem;
+    color: var(--color-dark);
+}
+
+.system-requirements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.system-requirements li {
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-variant);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.system-requirements li::before {
+    content: '•';
+    color: var(--color-primary);
+}
+
+.download-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.download-btn.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.download-btn.secondary {
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.previous-versions {
+    margin-top: 2rem;
+}
+
+.version-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.version-item {
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.version-item:hover {
+    box-shadow: none;
+}
+
+.version-info h3 {
+    margin-bottom: 0.3rem;
+}
+
+.release-date {
+    color: var(--color-info-dark);
+    font-size: 0.9rem;
+}
+
+.version-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Download Analytics Styles */
+.download-analytics {
+    margin-top: 2rem;
+}
+
+.analytics-card {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow);
+}
+
+.search-container span {
+    color: var(--color-info-dark);
+    margin-right: 0.5rem;
+}
+
+.search-container input {
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: var(--color-dark);
+}
+
+.user-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: left;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.user-management-table:hover {
+    box-shadow: none;
+}
+
+.user-management-table th {
+    color: var(--color-dark);
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.user-management-table th:first-child {
+    border-top-left-radius: var(--card-border-radius);
+}
+
+.user-management-table th:last-child {
+    border-top-right-radius: var(--card-border-radius);
+}
+
+.user-management-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.action-btn.view {
+    color: var(--color-primary);
+}
+
+.action-btn.edit {
+    color: var(--color-warning);
+}
+
+.action-btn.delete {
+    color: var(--color-danger);
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    background: var(--color-white);
+    color: var(--color-dark);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary), 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.status-badge.pending {
+    background: var(--color-warning);
+    color: var(--color-white);
+}
+
+.status-badge.inactive {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .analytics-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .user-management-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+/* Game Characters Page Styles */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.character-card {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.character-card:hover {
+    box-shadow: none;
+    transform: translateY(-5px);
+}
+
+.character-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.character-card h2 {
+    color: var(--color-dark);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.character-details {
+    color: var(--color-dark-variant);
+}
+
+.character-details p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.character-details strong {
+    color: var(--color-dark);
+}
+
+.character-card.expanded {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow);
+}
+
+@media screen and (max-width: 1200px) {
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .character-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Character Management Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-dark-variant);
+}
+
+.close-modal:hover {
+    color: var(--color-dark);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Table Styles */
+.mechanics-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.mechanics-section th,
+.mechanics-section td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-light);
+}
+
+.mechanics-section th {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.mechanics-section tr:hover {
+    background-color: var(--color-light);
+}
+
+.mechanics-section td:last-child {
+    white-space: nowrap;
+}
+
+.mechanics-section .edit-btn,
+.mechanics-section .delete-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mechanics-section .edit-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.mechanics-section .delete-btn {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.mechanics-section .edit-btn:hover,
+.mechanics-section .delete-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* Search and Add Button Styles */
+.user-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#search-character {
+    padding: 0.5rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    width: 300px;
+}
+
+#add-character-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#add-character-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1200px) {
+    .mechanics-section table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .user-management-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #search-character {
+        width: 100%;
+    }
+    
+    .mechanics-section th,
+    .mechanics-section td {
+        padding: 0.75rem;
+    }
+}
+
+/* Responsive Table Wrapper for Game Characters */
+.mechanics-section .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 900px) {
+    .mechanics-section table,
+    .mechanics-section thead,
+    .mechanics-section tbody,
+    .mechanics-section th,
+    .mechanics-section td,
+    .mechanics-section tr {
+        font-size: 0.95rem;
+    }
+    .mechanics-section th,
+    .mechanics-section td {
+        padding: 0.5rem 0.5rem;
+        min-width: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mechanics-section .table-responsive {
+        margin: 0 -1rem;
+    }
+    .mechanics-section table {
+        min-width: 700px;
+        font-size: 0.85rem;
+    }
+    .mechanics-section th,
+    .mechanics-section td {
+        padding: 0.4rem 0.3rem;
+    }
+    .user-management-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    #search-character {
+        width: 100%;
+    }
+}
+
+/* Dashboard Trends */
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.trend.positive {
+    color: var(--color-success);
+}
+
+.trend.negative {
+    color: var(--color-danger);
+}
+
+/* Game Mode Cards */
+.popular-game-modes .item,
+.top-players .item {
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.popular-game-modes .item:hover,
+.top-players .item:hover {
+    transform: translateX(0.5rem);
+}
+
+.popular-game-modes .img-box,
+.top-players .img-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: var(--border-radius-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-light);
+}
+
+.popular-game-modes .img-box span {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.top-players .img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info .name {
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.2rem;
+}
+
+.item-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-stats .count {
+    background: var(--color-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.8rem;
+    color: var(--color-dark-variant);
+}
+
+.item-stats .badge {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.8rem;
+}
+
+/* Server Status Indicators */
+.server-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+}
+
+.status-indicator.online {
+    background: var(--color-success);
+}
+
+.status-indicator.offline {
+    background: var(--color-danger);
+}
+
+.status-indicator.maintenance {
+    background: var(--color-warning);
+}
+
+/* Activity Table Enhancements */
+.recent-activities .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.recent-activities table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.recent-activities table td:first-child {
+    color: var(--color-info-dark);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.status-badge.success {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.status-badge.pending {
+    background: var(--color-warning);
+    color: var(--color-white);
+}
+
+.status-badge.inactive {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/* Responsive Enhancements */
+@media screen and (max-width: 1200px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .popular-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .analyse {
+        grid-template-columns: 1fr;
+    }
+    
+    .recent-activities table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Consolidated styles from HTML files - CORRECTED */
+
+/* Styles from gameitems.html (lines 10-110 of gameitems.html) */
+        /* Additional styles specific to gameitems.html if needed */
+        .game-items-container {
+            margin-top: 1.4rem;
+        }
+
+        .game-items-container h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .add-item-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-1);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .add-item-btn:hover {
+            background-color: var(--color-dark-variant); /* Adjust hover color if needed */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .game-items-table {
+            background-color: var(--color-white);
+            width: 100%;
+            padding: var(--card-padding);
+            text-align: left; /* Default to left, center for specific columns if needed */
+            box-shadow: var(--box-shadow);
+            border-radius: var(--card-border-radius);
+            transition: all 0.3s ease;
+            border-collapse: collapse; /* Ensures borders are clean */
+        }
+
+        .game-items-table:hover {
+            box-shadow: none;
+        }
+
+        .game-items-table th,
+        .game-items-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-light);
+            color: var(--color-dark-variant);
+        }
+        
+        .game-items-table th {
+            color: var(--color-dark);
+            font-weight: 600;
+            background-color: var(--color-light); /* Light background for header */
+        }
+
+        .game-items-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .game-items-table .item-image-placeholder {
+            width: 60px; /* Adjust as needed */
+            height: 60px;
+            background-color: var(--color-light);
+            border-radius: var(--border-radius-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--color-info-dark);
+            text-align: center;
+        }
+
+        .game-items-table .actions-cell {
+            text-align: center; /* Center align action buttons */
+        }
+        
+        /* Using existing button styles from style.css */
+        .game-items-table .edit-btn,
+        .game-items-table .delete-btn {
+            padding: 0.5rem 1rem; /* Slightly smaller padding for table buttons */
+            margin: 0 0.25rem;
+        }
+
+        /* Dark mode adjustments for the new elements */
+        body.dark-mode-variables .game-items-table {
+            background-color: var(--color-white); /* var(--color-white) in dark mode is #202528 */
+            color: var(--color-dark);
+        }
+        body.dark-mode-variables .game-items-table th {
+            background-color: var(--color-light); /* var(--color-light) in dark mode is rgba(0,0,0,0.4) */
+            color: #ccc; /* Lighter text for dark th */
+        }
+        body.dark-mode-variables .game-items-table td {
+            color: #bbb; /* Lighter text for dark td */
+            border-bottom: 1px solid #444; /* Darker border */
+        }
+         body.dark-mode-variables .game-items-table .item-image-placeholder {
+            background-color: #333;
+            color: #aaa;
+        }
+        body.dark-mode-variables .add-item-btn {
+            background-color: var(--color-primary); /* Keep primary color for main actions */
+            color: #fff; /* Ensure text is white */
+        }
+        body.dark-mode-variables .add-item-btn:hover {
+            background-color: var(--color-dark-variant);
+        }
+
+/* Styles from gamemechanics.html (lines 8-118 of gamemechanics.html) */
+        /* Additional Styles for Game Mechanics Page */
+        .mechanics-section {
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .search-mechanics-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .search-mechanics-container input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid var(--color-light);
+            border-radius: var(--border-radius-1);
+            font-size: 0.9rem;
+        }
+
+        .search-mechanics-container button {
+            padding: 0.8rem 1.5rem;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-1);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-mechanics-container button:hover {
+            background: var(--color-dark);
+            transform: translateY(-2px);
+        }
+
+        .mechanics-tips {
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 2rem;
+        }
+
+        .mechanics-tips h2 {
+            margin-bottom: 1.5rem;
+            color: var(--color-dark);
+        }
+
+        .tip-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--color-light);
+            border-radius: var(--border-radius-1);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateX(5px);
+        }
+
+        .tip-card span {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .tip-card p {
+            color: var(--color-dark);
+            font-weight: 500;
+        }
+
+/* START: Commented out potentially conflicting generic styles from gamemechanics.html */
+/*
+        .table-responsive {
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-light);
+        }
+
+        th {
+            background: var(--color-light);
+            font-weight: 600;
+        }
+*/
+/* END: Commented out potentially conflicting generic styles */
+
+        .edit-btn, .delete-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--border-radius-1);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            margin-right: 0.5rem;
+        }
+
+        .delete-btn {
+            background-color: var(--color-danger);
+            color: var(--color-white);
+        }
+
+        .edit-btn:hover, .delete-btn:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+/* Styles for Game Items Page Search and Controls */
+.content-section {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.page-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+}
+
+.search-items-container {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: center;
+}
+
+.search-items-container input[type="text"] {
+    flex: 1 1 0%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    font-size: 0.95rem;
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+.add-item-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-1);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.add-item-btn .material-icons-sharp {
+    font-size: 1.3rem;
+}
+
+.add-item-btn:hover {
+    background: var(--color-dark-variant);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .page-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    .add-item-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.user-management-table tr:last-child td:first-child {
+    border-bottom-left-radius: var(--card-border-radius);
+}
+.user-management-table tr:last-child td:last-child {
+    border-bottom-right-radius: var(--card-border-radius);
+}
+
+/* FAQ PAGE STYLES (migrated from faqs.html) */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    padding: 0.5rem;
+    border-radius: var(--border-radius-1);
+    border: 1px solid var(--color-light);
+}
+
+.search-box span {
+    color: var(--color-info-dark);
+    margin-right: 0.5rem;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+}
+
+.filter-box select {
+    padding: 0.5rem;
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+.category-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius-1);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.category-badge.general {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.category-badge.account {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.category-badge.gameplay {
+    background: var(--color-warning);
+    color: var(--color-white);
+}
+
+.category-badge.technical {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.faq-details {
+    padding: 1rem 0;
+}
+
+.detail-group {
+    margin-bottom: 1rem;
+}
+
+.detail-group label {
+    font-weight: 600;
+    color: var(--color-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.detail-group p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.primary-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+    background: var(--color-dark-variant);
+    transform: translateY(-2px);
+}
+
+/* Icon size adjustments for Game Mechanics */
+.edit-btn .material-icons-sharp,
+.delete-btn .material-icons-sharp {
+    font-size: 1.2rem;
+}
+
+.add-mechanic-btn .material-icons-sharp {
+    font-size: 1.3rem;
+}
+
+.tip-card .material-icons-sharp {
+    font-size: 1.4rem;
+}
+
+/* Adjust button padding for smaller icons */
+.edit-btn, .delete-btn {
+    padding: 0.4rem 0.6rem;
+}
+
+/* Adjust table cell padding for better alignment */
+td .edit-btn, 
+td .delete-btn {
+    padding: 0.3rem 0.5rem;
 }

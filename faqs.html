@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Silog Universe - FAQs</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html" class="active">
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <div class="mechanics-section">
+                <div class="analytics-header">
+                    <h1>Frequently Asked Questions (FAQs)</h1>
+                    <div class="search-mechanics-container">
+                        <div class="search-box">
+                            <span class="material-icons-sharp">search</span>
+                            <input type="text" id="search-faq" placeholder="Search FAQs...">
+                        </div>
+                        <div class="filter-box">
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="general">General</option>
+                                <option value="account">Account</option>
+                                <option value="gameplay">Gameplay</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        <button id="add-faq-btn" class="primary-btn">
+                            <span class="material-icons-sharp">add</span>
+                            Add FAQ
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="user-management-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Category</th>
+                                <th>Question</th>
+                                <th>Answer</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- General Category -->
+                            <tr data-category="general">
+                                <td>#1</td>
+                                <td><span class="category-badge general">General</span></td>
+                                <td>What is Silog Universe?</td>
+                                <td>Silog Universe is an exciting new MMORPG that combines traditional Filipino elements with modern gaming mechanics...</td>
+                                <td>2024-03-15</td>
+                                <td class="actions">
+                                    <button class="action-btn view" title="View Details">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit" title="Edit FAQ">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete" title="Delete FAQ">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Account Category -->
+                            <tr data-category="account">
+                                <td>#2</td>
+                                <td><span class="category-badge account">Account</span></td>
+                                <td>How do I reset my password?</td>
+                                <td>You can reset your password by clicking on the 'Forgot Password' link on the login page...</td>
+                                <td>2024-03-14</td>
+                                <td class="actions">
+                                    <button class="action-btn view" title="View Details">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit" title="Edit FAQ">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete" title="Delete FAQ">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Gameplay Category -->
+                            <tr data-category="gameplay">
+                                <td>#3</td>
+                                <td><span class="category-badge gameplay">Gameplay</span></td>
+                                <td>How do I level up my character?</td>
+                                <td>You can level up your character by completing quests, defeating enemies, and participating in events...</td>
+                                <td>2024-03-13</td>
+                                <td class="actions">
+                                    <button class="action-btn view" title="View Details">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit" title="Edit FAQ">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete" title="Delete FAQ">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <!-- Technical Category -->
+                            <tr data-category="technical">
+                                <td>#4</td>
+                                <td><span class="category-badge technical">Technical</span></td>
+                                <td>What are the system requirements?</td>
+                                <td>Minimum requirements: Windows 10, 4GB RAM, DirectX 11 compatible graphics card...</td>
+                                <td>2024-03-12</td>
+                                <td class="actions">
+                                    <button class="action-btn view" title="View Details">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit" title="Edit FAQ">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete" title="Delete FAQ">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add FAQ Modal -->
+            <div id="add-faq-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Add New FAQ</h2>
+                        <span class="close-modal" onclick="closeFaqModal()">&times;</span>
+                    </div>
+                    <form id="add-faq-form">
+                        <div class="form-group">
+                            <label for="faq-category">Category</label>
+                            <select id="faq-category" name="faq-category" required>
+                                <option value="">Select Category</option>
+                                <option value="general">General</option>
+                                <option value="account">Account</option>
+                                <option value="gameplay">Gameplay</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="faq-question">Question</label>
+                            <input type="text" id="faq-question" name="faq-question" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="faq-answer">Answer</label>
+                            <textarea id="faq-answer" name="faq-answer" rows="4" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="download-btn primary">Add FAQ</button>
+                            <button type="button" class="download-btn secondary" onclick="closeFaqModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Edit FAQ Modal -->
+            <div id="edit-faq-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Edit FAQ</h2>
+                        <span class="close-modal" onclick="closeEditFaqModal()">&times;</span>
+                    </div>
+                    <form id="edit-faq-form">
+                        <input type="hidden" id="edit-faq-id" name="edit-faq-id">
+                        <div class="form-group">
+                            <label for="edit-faq-category">Category</label>
+                            <select id="edit-faq-category" name="edit-faq-category" required>
+                                <option value="general">General</option>
+                                <option value="account">Account</option>
+                                <option value="gameplay">Gameplay</option>
+                                <option value="technical">Technical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-faq-question">Question</label>
+                            <input type="text" id="edit-faq-question" name="edit-faq-question" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-faq-answer">Answer</label>
+                            <textarea id="edit-faq-answer" name="edit-faq-answer" rows="4" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="download-btn primary">Save Changes</button>
+                            <button type="button" class="download-btn secondary" onclick="closeEditFaqModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- View FAQ Modal -->
+            <div id="view-faq-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>FAQ Details</h2>
+                        <span class="close-modal" onclick="closeViewFaqModal()">&times;</span>
+                    </div>
+                    <div class="faq-details">
+                        <div class="detail-group">
+                            <label>Category:</label>
+                            <span id="view-faq-category"></span>
+                        </div>
+                        <div class="detail-group">
+                            <label>Question:</label>
+                            <p id="view-faq-question"></p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Answer:</label>
+                            <p id="view-faq-answer"></p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Last Updated:</label>
+                            <span id="view-faq-date"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/29.png">
+                    <h2>Silog Universe</h2>
+                    <p>FAQs Management</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Recent Updates</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">campaign</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>New FAQ Added</h3>
+                            <small class="text_muted">Technical category updated</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">edit</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>FAQ Updated</h3>
+                            <small class="text_muted">Account section modified</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add_alert</span>
+                        <h3>Create Alert</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/faqs.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html> 

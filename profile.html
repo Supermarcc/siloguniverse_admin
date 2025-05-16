@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Profile - Silog Universe</title>
+    <style>
+        .profile-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            padding: 2rem 2.5rem 2.5rem 2.5rem;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .profile-header img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f3c623;
+        }
+        .profile-header .profile-info {
+            flex: 1;
+        }
+        .profile-header .profile-info h2 {
+            margin: 0 0 0.3rem 0;
+        }
+        .profile-form label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .profile-form input, .profile-form select {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .profile-form .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .profile-form button {
+            background: #f3c623;
+            color: #222;
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .profile-form button:hover {
+            background: #e2b100;
+        }
+        .back-btn {
+            background: #eee;
+            color: #333;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #ddd;
+        }
+        .change-photo {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="images/profile-1.jpg" alt="Profile Picture" id="profilePicPreview">
+            <div class="profile-info">
+                <h2 id="profileName">Reymarc</h2>
+                <p id="profileRole">Admin</p>
+                <label class="change-photo">
+                    <span class="material-icons-sharp" style="vertical-align: middle;">edit</span>
+                    Change Photo
+                    <input type="file" id="profilePicInput" accept="image/*" style="display:none;">
+                </label>
+            </div>
+        </div>
+        <form class="profile-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="Reymarc" required>
+
+            <label for="role">Role</label>
+            <select id="role" name="role">
+                <option value="Admin" selected>Admin</option>
+                <option value="Moderator">Moderator</option>
+                <option value="Editor">Editor</option>
+            </select>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="admin@siloguniverse.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter new password">
+
+            <div class="actions">
+                <a href="index.html" class="back-btn">&larr; Back</a>
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Preview profile picture
+        document.getElementById('profilePicInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    document.getElementById('profilePicPreview').src = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        // Optionally, handle form submission here
+        document.querySelector('.profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Profile changes saved! (Demo only)');
+        });
+    </script>
+</body>
+</html> 

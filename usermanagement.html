@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Silog Universe - User Management</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html" class="active">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html">
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <div class="mechanics-section">
+                <div class="analytics-header">
+                    <h1>User Management</h1>
+                    <div class="search-mechanics-container">
+                        <input type="text" id="search-user" placeholder="Search users...">
+                        <button id="add-user-btn">
+                            <span class="material-icons-sharp">add</span>
+                            Add User
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="user-management-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1</td>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="images/profile-1.jpg" alt="User">
+                                        <span>John Doe</span>
+                                    </div>
+                                </td>
+                                <td>john@example.com</td>
+                                <td>Admin</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="actions">
+                                    <button class="action-btn view">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#2</td>
+                                <td>
+                                    <div class="user-info">
+                                        <img src="images/profile-2.jpg" alt="User">
+                                        <span>Jane Smith</span>
+                                    </div>
+                                </td>
+                                <td>jane@example.com</td>
+                                <td>User</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td class="actions">
+                                    <button class="action-btn view">
+                                        <span class="material-icons-sharp">visibility</span>
+                                    </button>
+                                    <button class="action-btn edit">
+                                        <span class="material-icons-sharp">edit</span>
+                                    </button>
+                                    <button class="action-btn delete">
+                                        <span class="material-icons-sharp">delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add User Modal -->
+            <div id="add-user-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Add New User</h2>
+                    <form id="add-user-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="download-btn primary">Add User</button>
+                            <button type="button" class="download-btn secondary" onclick="closeModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/29.png">
+                    <h2>Silog Universe</h2>
+                    <p>Fullstack Web Developer</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">edit</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">08:00 AM - 12:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="orders.js"></script>
+    <script src="index.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('add-user-modal');
+        const addUserBtn = document.getElementById('add-user-btn');
+        const closeBtn = document.querySelector('.close-modal');
+
+        addUserBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Search functionality
+        document.getElementById('search-user').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('.user-management-table tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Action buttons functionality
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.classList.contains('view') ? 'view' :
+                              this.classList.contains('edit') ? 'edit' : 'delete';
+                const row = this.closest('tr');
+                const userId = row.querySelector('td:first-child').textContent;
+                
+                switch(action) {
+                    case 'view':
+                        // Implement view functionality
+                        console.log('View user:', userId);
+                        break;
+                    case 'edit':
+                        // Implement edit functionality
+                        console.log('Edit user:', userId);
+                        break;
+                    case 'delete':
+                        if(confirm('Are you sure you want to delete this user?')) {
+                            // Implement delete functionality
+                            console.log('Delete user:', userId);
+                        }
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html> 

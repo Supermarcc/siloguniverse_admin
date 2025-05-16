@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Items Management | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Start -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html">
+                    <span class="material-icons-sharp">settings</span> 
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html" class="active">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html"> 
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- Sidebar End -->
+
+        <!-- Main Content Start -->
+        <main>
+            <div class="content-section">
+                <h1>Game Items Management</h1>
+
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-game-item" placeholder="Search items by name or category...">
+                    <button class="add-item-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add New Item
+                    </button>
+                </div>
+
+                <table class="game-items-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Picture</th>
+                            <th>Category</th>
+                            <th class="actions-cell">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rice</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ingredient</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Egg Sunny-Side Up</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Prepared Dish</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ulam - Tapa</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ulam - Tocino</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ulam - Longganisa</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Ulam - Hotdog</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ulam - Corned Beef</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Ulam - Chicken</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Ulam</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drinks</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Beverage</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Oil</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Condiment</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salt</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Condiment</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pepper</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Condiment</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Minced Garlic</td>
+                            <td><div class="item-image-placeholder">Img</div></td>
+                            <td>Condiment</td>
+                            <td class="actions-cell">
+                                <button class="edit-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">edit</span></button>
+                                <button class="delete-btn"><span class="material-icons-sharp" style="font-size: 1.1rem; vertical-align: middle;">delete</span></button>
+                            </td>
+                        </tr>
+                        <!-- More items can be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <!-- Main Content End -->
+
+        <!-- Right Section Start -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/29.png">
+                    <h2>Silog Universe</h2>
+                    <p>Fullstack Web Developer</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            volume_up
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">
+                            edit
+                        </span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Workshop</h3>
+                            <small class="text_muted">
+                                08:00 AM - 12:00 PM
+                            </small>
+                        </div>
+                        <span class="material-icons-sharp">
+                            more_vert
+                        </span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">
+                            add
+                        </span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Section End -->
+    </div>
+    <script src="js/gameitems.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html> 

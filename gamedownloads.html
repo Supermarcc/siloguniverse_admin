@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Downloads - Silog Universe Admin</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html" class="active">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html">
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>Game Downloads</h1>
+            <div class="search-mechanics-container">
+                <input type="text" id="search-download" placeholder="Search downloads or versions...">
+                <button id="add-download-btn">
+                    <span class="material-icons-sharp">add</span>
+                    Add Download
+                </button>
+            </div>
+            
+            <!-- Download Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Total Downloads</h3>
+                        <h1>1,234,567</h1>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Active Users</h3>
+                        <h1>45,678</h1>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Latest Version</h3>
+                        <h1>v2.5.1</h1>
+                    </div>
+                    <div class="stat-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Cards -->
+            <div class="download-cards">
+                <!-- Latest Version Card -->
+                <div class="download-card featured">
+                    <div class="card-header">
+                        <h2>Latest Version</h2>
+                        <span class="version-badge">v2.5.1</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="download-info">
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Released: March 15, 2024</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-hdd"></i>
+                                <span>Size: 2.4 GB</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-download"></i>
+                                <span>Downloads: 45,678</span>
+                            </div>
+                        </div>
+                        <div class="system-requirements">
+                            <h3>System Requirements</h3>
+                            <ul>
+                                <li>OS: Windows 10 64-bit</li>
+                                <li>CPU: Intel Core i5 or equivalent</li>
+                                <li>RAM: 8GB</li>
+                                <li>GPU: NVIDIA GTX 1060 or equivalent</li>
+                                <li>Storage: 5GB available space</li>
+                            </ul>
+                        </div>
+                        <div class="download-actions">
+                            <button class="download-btn primary">
+                                <i class="fas fa-download"></i>
+                                Download Now
+                            </button>
+                            <button class="download-btn secondary">
+                                <i class="fas fa-list"></i>
+                                Release Notes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Versions -->
+                <div class="previous-versions">
+                    <h2>Previous Versions</h2>
+                    <div class="version-list">
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Version 2.5.0</h3>
+                                <span class="release-date">March 1, 2024</span>
+                            </div>
+                            <div class="version-actions">
+                                <button class="download-btn small">Download</button>
+                                <button class="download-btn small secondary">Notes</button>
+                            </div>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Version 2.4.2</h3>
+                                <span class="release-date">February 15, 2024</span>
+                            </div>
+                            <div class="version-actions">
+                                <button class="download-btn small">Download</button>
+                                <button class="download-btn small secondary">Notes</button>
+                            </div>
+                        </div>
+                        <div class="version-item">
+                            <div class="version-info">
+                                <h3>Version 2.4.1</h3>
+                                <span class="release-date">February 1, 2024</span>
+                            </div>
+                            <div class="version-actions">
+                                <button class="download-btn small">Download</button>
+                                <button class="download-btn small secondary">Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/29.png">
+                    <h2>Silog Universe</h2>
+                    <p>Fullstack Web Developer</p>
+                </div>
+            </div>
+
+            <!-- Download Analytics -->
+            <div class="download-analytics">
+                <h2>Download Analytics</h2>
+                <div class="analytics-card">
+                    <div class="analytics-header">
+                        <h3>Last 7 Days</h3>
+                        <span class="trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            12.5%
+                        </span>
+                    </div>
+                    <div class="analytics-chart">
+                        <!-- Placeholder for chart -->
+                        <div class="chart-placeholder">
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 90%"></div>
+                            <div class="bar" style="height: 70%"></div>
+                            <div class="bar" style="height: 50%"></div>
+                            <div class="bar" style="height: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>New Version Release</h3>
+                            <small class="text_muted">Tomorrow - 10:00 AM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification deactive">
+                    <div class="icon">
+                        <span class="material-icons-sharp">edit</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Update Release Notes</h3>
+                            <small class="text_muted">Today - 2:00 PM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html> 

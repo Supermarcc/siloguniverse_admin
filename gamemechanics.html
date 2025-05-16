@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Silog Universe - Game Mechanics</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="images/NEW FONT STYLE.png">
+                    <h2>Silog <span class="danger">Universe</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="usermanagement.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>User Management</h3>
+                </a>
+                <a href="gamedownloads.html">
+                    <span class="material-icons-sharp">download</span>
+                    <h3>Game Downloads</h3>
+                </a>
+                <a href="gamemechanics.html" class="active">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Game Mechanics</h3>
+                </a>
+                <a href="gamecharacters.html">
+                    <span class="material-icons-sharp">people</span>
+                    <h3>Game Characters</h3>
+                </a>
+                <a href="gameitems.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Game Items</h3>
+                </a>
+                <a href="faqs.html">
+                    <span class="material-icons-sharp">help</span>
+                    <h3>FAQs</h3>
+                </a>
+                <a href="login.html" class="login-btn">
+                    <span class="material-icons-sharp">login</span>
+                    <h3>Admin Login</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <h1 class="section-title">Game Mechanics</h1>
+
+            <!-- Core Gameplay Section -->
+            <div class="mechanics-section">
+                <h2>Core Gameplay Mechanics</h2>
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-core-gameplay" placeholder="Search mechanics...">
+                    <button id="add-core-gameplay-btn" class="add-mechanic-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Mechanic
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="core-gameplay-table">
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Title</th>
+                                <th>Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="material-icons-sharp">restaurant</span></td>
+                                <td>Cooking System</td>
+                                <td>Step-by-step cooking process, Timed cooking mechanics, Multiple cooking methods</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="material-icons-sharp">schedule</span></td>
+                                <td>Order & Time Management</td>
+                                <td>Multiple order types, Time-based challenges, Customer satisfaction system</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="material-icons-sharp">store</span></td>
+                                <td>Restaurant Upgrade System</td>
+                                <td>Progressive upgrades, New menu unlocks, Decoration system</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+                <!-- Modal for Add/Edit -->
+                <div id="core-gameplay-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="core-gameplay-modal-title">Add Mechanic</h2>
+                        <form id="core-gameplay-form">
+                            <div class="form-group">
+                                <label for="core-icon">Icon (material icon name):</label>
+                                <input type="text" id="core-icon" name="icon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="core-title">Title:</label>
+                                <input type="text" id="core-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="core-details">Details (comma separated):</label>
+                                <textarea id="core-details" name="details" required></textarea>
+                            </div>
+                            <button type="submit" class="edit-btn">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Section -->
+            <div class="mechanics-section">
+                <h2>Available Silog Meals</h2>
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-silog-meal" placeholder="Search meals...">
+                    <button id="add-silog-meal-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Meal
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="silog-meal-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="images/tapsilog.jpg" alt="Tapsilog" style="width:50px;"></td>
+                                <td>Tapsilog</td>
+                                <td>Beef tapa + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/porksilog.jpg" alt="Porksilog" style="width:50px;"></td>
+                                <td>Porksilog</td>
+                                <td>Fried pork + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/hotsilog.jpg" alt="Hotsilog" style="width:50px;"></td>
+                                <td>Hotsilog</td>
+                                <td>Hotdog + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/chicsilog.jpg" alt="Chicsilog" style="width:50px;"></td>
+                                <td>Chicsilog</td>
+                                <td>Fried chicken + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/longsilog.jpg" alt="Longsilog" style="width:50px;"></td>
+                                <td>Longsilog</td>
+                                <td>Longganisa + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/tosilog.jpg" alt="Tosilog" style="width:50px;"></td>
+                                <td>Tosilog</td>
+                                <td>Tocino + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/cornsilog.jpg" alt="Cornsilog" style="width:50px;"></td>
+                                <td>Cornsilog</td>
+                                <td>Corned beef + sinangag + itlog</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+                <!-- Modal for Add/Edit -->
+                <div id="silog-meal-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="silog-meal-modal-title">Add Meal</h2>
+                        <form id="silog-meal-form">
+                            <div class="form-group">
+                                <label for="meal-image">Image URL:</label>
+                                <input type="text" id="meal-image" name="image" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="meal-name">Name:</label>
+                                <input type="text" id="meal-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="meal-description">Description:</label>
+                                <textarea id="meal-description" name="description" required></textarea>
+                            </div>
+                            <button type="submit" class="edit-btn">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cooking Process Section -->
+            <div class="mechanics-section">
+                <h2>Cooking Process</h2>
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-cooking-process" placeholder="Search steps...">
+                    <button id="add-cooking-process-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Step
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="cooking-process-table">
+                        <thead>
+                            <tr>
+                                <th>Step #</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Preparation</td>
+                                <td>Each food item has its designated container before cooking</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Frying Process</td>
+                                <td>Place frying pan on stove, Add oil, Add meat/ulam, Manage multiple servings</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Rice & Sinangag</td>
+                                <td>Cook rice in rice cooker, Add garlic & seasonings, Stir until golden brown</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Egg Cooking</td>
+                                <td>Select egg and watch it cook automatically</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Plating</td>
+                                <td>Add sinangag, Add cooked meat, Add fried egg</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Serving</td>
+                                <td>Serve plated meal, Optional soup, Optional drinks</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+                <!-- Modal for Add/Edit -->
+                <div id="cooking-process-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="cooking-process-modal-title">Add Step</h2>
+                        <form id="cooking-process-form">
+                            <div class="form-group">
+                                <label for="process-step">Step #:</label>
+                                <input type="number" id="process-step" name="step" required min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="process-title">Title:</label>
+                                <input type="text" id="process-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="process-description">Description:</label>
+                                <textarea id="process-description" name="description" required></textarea>
+                            </div>
+                            <button type="submit" class="edit-btn">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Modes Section -->
+            <div class="mechanics-section">
+                <h2>Game Modes</h2>
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-game-mode" placeholder="Search modes...">
+                    <button id="add-game-mode-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Mode
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="game-mode-table">
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="material-icons-sharp">campaign</span></td>
+                                <td>Story Mode</td>
+                                <td>Progress through challenges from small eatery to tapsilogan chain</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="material-icons-sharp">sports_esports</span></td>
+                                <td>Free Play Mode</td>
+                                <td>Relaxed cooking experience without time limits</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+                <!-- Modal for Add/Edit -->
+                <div id="game-mode-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="game-mode-modal-title">Add Mode</h2>
+                        <form id="game-mode-form">
+                            <div class="form-group">
+                                <label for="mode-icon">Icon (material icon name):</label>
+                                <input type="text" id="mode-icon" name="icon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mode-title">Title:</label>
+                                <input type="text" id="mode-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mode-description">Description:</label>
+                                <textarea id="mode-description" name="description" required></textarea>
+                            </div>
+                            <button type="submit" class="edit-btn">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unlockables Section -->
+            <div class="mechanics-section">
+                <h2>Unlockables & Premium Content</h2>
+                <div class="search-mechanics-container">
+                    <input type="text" id="search-unlockable" placeholder="Search unlockables...">
+                    <button id="add-unlockable-btn">
+                        <span class="material-icons-sharp">add</span>
+                        Add Unlockable
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="unlockable-table">
+                        <thead>
+                            <tr>
+                                <th>Icon</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="material-icons-sharp">style</span></td>
+                                <td>Premium Skins</td>
+                                <td>Customize characters, kitchen, and utensils</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="material-icons-sharp">restaurant_menu</span></td>
+                                <td>Special Dishes</td>
+                                <td>Unlock unique Filipino dishes</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="material-icons-sharp">map</span></td>
+                                <td>Regional Packs</td>
+                                <td>Explore regional Filipino breakfasts</td>
+                                <td>
+                                    <button class="edit-btn"><span class="material-icons-sharp">edit</span></button>
+                                    <button class="delete-btn"><span class="material-icons-sharp">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#">Show All</a>
+                <!-- Modal for Add/Edit -->
+                <div id="unlockable-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="unlockable-modal-title">Add Unlockable</h2>
+                        <form id="unlockable-form">
+                            <div class="form-group">
+                                <label for="unlockable-icon">Icon (material icon name):</label>
+                                <input type="text" id="unlockable-icon" name="icon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="unlockable-title">Title:</label>
+                                <input type="text" id="unlockable-title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="unlockable-description">Description:</label>
+                                <textarea id="unlockable-description" name="description" required></textarea>
+                            </div>
+                            <button type="submit" class="edit-btn">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Reymarc</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/profile-1.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mechanics-tips">
+                <h2>Quick Tips</h2>
+                <div class="tip-card">
+                    <span class="material-icons-sharp">lightbulb</span>
+                    <p>Master the timing for perfect eggs</p>
+                </div>
+                <div class="tip-card">
+                    <span class="material-icons-sharp">lightbulb</span>
+                    <p>Upgrade your kitchen tools early</p>
+                </div>
+                <div class="tip-card">
+                    <span class="material-icons-sharp">lightbulb</span>
+                    <p>Keep track of customer preferences</p>
+                </div>
+                <div class="tip-card">
+                    <span class="material-icons-sharp">lightbulb</span>
+                    <p>Practice different cooking techniques</p>
+                </div>
+                <div class="tip-card">
+                    <span class="material-icons-sharp">lightbulb</span>
+                    <p>Manage your resources efficiently</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="js/darkmode.js"></script>
+</body>
+</html> 
